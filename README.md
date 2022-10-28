@@ -1,18 +1,179 @@
-# Polar Bear
-An open source minimal theme for Jekyll, ideal for blogging.
+<html lang="ko"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Camera Web App</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <!-- https://m.blog.naver.com/jcosmoss/221726557936 -->
+    <!-- https://velog.io/@2ujin/%EC%B9%9C%EA%B5%AC%EC%83%9D%EC%9D%BC-%EA%B8%B0%EB%85%90-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0 -->
+    <style>
+        @font-face {
+            font-family: 'drfont_daraehand';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/drfont_daraehand.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-View the demo at http://diezcami.github.io/polar-bear-theme
+        html, body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-## Contribute
-Please submit **open issues** for bugs or TBA features that haven't been documented yet! Feel free to submit pull requests for any existing issues.
+        p{
+            margin: 0;
+            padding: 0;
+        }
 
-## License
-The MIT License (MIT)
+        #header{
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            z-index: 999;
+            color: white;
+            text-align: center;
+            transform: translate(-50%, -50%);
+        }
 
-Copyright (c) 2015 Camille Diez
+        #header > p {
+            font-size: 0.9em;
+            color: rgb(121, 200, 253);
+        }
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        #camera{
+            background: rgb(121 200 253 / 29%);
+        }
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+        #camera, #camera--view, #camera--sensor, #camera--output{
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        #camera--view, #camera--sensor, #camera--output{
+            transform: scaleX(-1);
+            filter: FlipH;
+        }
+
+        #camera--trigger{
+            width: 180px;
+            color: white;
+            background-color: rgb(121, 200, 253);
+            font-size: 16px;
+            border-radius: 30px;
+            border: none;
+            padding: 15px 20px;
+            text-align: center;
+            box-shadow: 0 5px 10px 0 rgba(0,0,0,0, 0.2);
+            position: fixed;
+            bottom: 30px;
+            left: calc(50% - 90px);
+        }
+
+        .taken {
+            height: 80%!important;
+            width: 85%!important;
+            /* border: solid 2px rgb(121, 200, 253); */
+            left: 0;
+            margin-top: 20px;
+        }
+        .templete{
+            background: #fff;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            width: 90%;
+            height: 77%;
+            margin: 20px auto 0;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .btd_txt{
+            font-family: 'drfont_daraehand';
+            position: absolute;
+            bottom: 22px;
+            width: 100%;
+            text-align: center;
+            line-height: 18px;
+        }
+        .blind{
+            display: none;
+        }
+    </style>
+</head>
+<body cz-shortcut-listen="true">
+    <div id="header">
+        <!-- <h3>Simple Web Camera</h3> -->
+        <p>버튼을 클릭 하세요.</p>
+    </div>
+    
+    <!-- main 태그는 문서의 주요 내용을 담는 태그이다. 한 문서에 한개 존재 해야 한다.
+        또한 article, aside, header, nav, footer등 요소의 하위에 사용해서는 안된다.
+    -->
+    <main id="camera">
+        
+        <canvas id="camera--sensor"></canvas>
+
+        <!-- 기기의 카메라에 접근하여 영상을 페이지에 재생한다. -->
+        <video id="camera--view" autoplay="" playsinline=""></video>
+            <div class="templete blind">
+                <img src="//:0" alt="" id="camera--output">
+                <div class="btd_txt blind">
+                    <p>2022.11.04</p>
+                    <p>🎉 🥳 2n번째 생일을 축하합니다. 🥳 🎂</p>
+                </div>
+            </div>
+
+        <button id="camera--trigger">사진촬영</button>
+
+    </main>
+
+
+
+
+
+
+    <script>
+
+        let constraints = { video: { facingMode: "user"}, audio: false};
+        const cameraView = document.querySelector("#camera--view");
+        const cameraOutput = document.querySelector("#camera--output");
+        const cameraSensor = document.querySelector("#camera--sensor");
+        const cameraTrigger = document.querySelector("#camera--trigger");
+
+
+        function cameraStart(){
+            navigator.mediaDevices.getUserMedia(constraints)
+                .then(function(stream){
+                    track = stream.getTracks()[0];
+                    cameraView.srcObject = stream;
+
+                })
+                .catch(function(error){
+                    console.error("카메라에 문제가 있습니다.", error);
+                })
+        }
+
+        //촬영 버튼 클릭 리스너
+        cameraTrigger.addEventListener("click", function(){
+            
+            cameraSensor.width = cameraView.videoWidth; //640으로 정해져서 나오네?
+            cameraSensor.height = cameraView.videoHeight;
+            cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
+            cameraOutput.src = cameraSensor.toDataURL("image/webp");
+            cameraOutput.classList.add("taken");
+            console.log(cameraSensor.height);
+        });
+
+        $('#camera--trigger').on("click", function(){
+            $('.blind').css('display','block');
+            $('#header > p').css('color','#fff');
+        });
+    
+        // 페이지가 로드되면 함수 실행
+        window.addEventListener("load", cameraStart, false);
+    </script>
+
+</body></html>
