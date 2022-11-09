@@ -70,6 +70,7 @@ input:focus{
 }
 #tdl_wrap .tdl_list .tdl_libox .tdl_tit .tit{
     width: 85%;
+    padding-top: 10px;
 }
 #tdl_wrap .tdl_list .tdl_libox .tdl_tit .all_chk{
     background: none;
@@ -105,6 +106,8 @@ input:focus{
     border: 1px solid #fff;
     color: #fff;
     /* background: #9e3b9e4f; */
+    display: flex;
+    justify-content: center;
 }
 .listem{
     padding: 0 10px;
@@ -162,4 +165,10 @@ input:focus{
 #tdl_wrap .tdl_btn .allcl_btn:hover{
     background: #ca92ca;
     color: #fff;
+}
+
+@media screen and (max-width:375px) {
+    .listem{
+        width: 72%;
+    }
 }
