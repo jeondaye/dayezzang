@@ -70,25 +70,96 @@ input:focus{
 }
 #tdl_wrap .tdl_list .tdl_libox .tdl_tit .tit{
     width: 85%;
-    padding-top: 10px;
 }
 #tdl_wrap .tdl_list .tdl_libox .tdl_tit .all_chk{
     background: none;
-    padding-left: 17px;
 }
 #tdl_wrap .tdl_list .tdl_libox .tdl_tit .bx{
     font-size: 25px;
     margin-right: 10px;
 }
 
-#tdl_wrap .tdl_list .tdl_libox input[type="checkbox"]{
+#tdl_wrap .tdl_list input[type="checkbox"]{
     position: relative;
-    width: 20px;
-    height: 20px;
+    width: 26.67px;
+    height: 26px;
     border: 2px solid #fff;
-    border-radius: 5px;
     margin-right: 10px;
+    accent-color: #f5edf5;
+    top: 3px;
 }
-#tdl_wrap .tdl_list .tdl_libox input[type="checkbox"]:checked{
+
+#tdl_wrap .tdl_list input[type="checkbox"]:checked::after{
+    content: '....';
+    background: #cc99cc;
+    font-size: 20px;
+    color: #cc99cc;
+    border-radius: 3px;
+}
+
+#tdl_wrap .tdl_list .tdl_libox .tdl_top{
+    background: #CC99CC;
+}
+#tdl_wrap .tdl_list .tdl_libox .tdl_tit{
+    text-align: center;
+    border: 1px solid #fff;
+    color: #fff;
+    /* background: #9e3b9e4f; */
+}
+.listem{
+    padding: 0 10px;
+    color: #fff;
+    font-size: 16px;
+    height: auto;
+    overflow: hidden;
+    display: inline-block;
+    width: 77%;
+    margin: 0;
+    text-align: left;
+    line-height: 26px;
+}
+#tdl_wrap .tdl_list .tdl_libox .tdl_tit .del_btn{
     background: none;
+    padding: 0;
+}
+
+#tdl_wrap .tdl_btn{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+#tdl_wrap .tdl_btn button{
+    background: #9e3b9e4f;
+    width: auto;
+    padding: 1px 13px;
+    font-size: 13px;
+    height: auto;
+    border-radius: 5px;
+}
+#tdl_wrap .tdl_btn button.selected{
+    border: 2px solid #ca92ca;
+}
+#tdl_wrap .tdl_btn button:hover{
+    background: #ca92ca;
+    box-sizing: border-box;
+    transition: all ease-in-out 0.25s;
+}
+#tdl_wrap .tdl_btn .items{
+    background: none;
+    color: #333;
+    font-size: 12px;
+    line-height: 20px;
+    height: auto;
+}
+#tdl_wrap .tdl_btn .allcl_btn{
+    background: none;
+    color: #9e3b9e;
+    border: 2px solid #CC99CC;
+    border-radius: 15px;
+}
+#tdl_wrap .tdl_btn .allcl_btn:hover{
+    background: #ca92ca;
+    color: #fff;
 }
