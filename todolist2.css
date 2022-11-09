@@ -169,6 +169,6 @@ input:focus{
 
 @media screen and (max-width: 425px) {
     .listem{
-        width: 73%;
+        width: 70%;
     }
 }
