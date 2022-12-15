@@ -1,0 +1,82 @@
+<html lang="ko"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/JQuery-Snowfall/1.7.4/snowfall.jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <p><i class="bx bxs-star"></i></p>
+        <p>ME</p>
+        <p>RRY</p>
+        <p>CHRI</p>
+        <p>STMAS</p>
+        <p class="plant"></p>
+        <p></p>
+    </div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+
+    html, body{padding: 0; margin: 0;min-width: 1300px;}
+    div{
+        
+        text-align: center;
+        background: rgba(124, 116, 116,0.2);
+    }
+    div p{
+        font-family: "Rubik Vinyl";
+        font-size: 150px;
+        color: #CC3333;
+        letter-spacing: 45px;
+        margin: 0;
+        /* line-height: 55px; */
+        position: relative;
+        -webkit-text-stroke: 5px #336633;
+    }
+    div p:nth-child(1){
+        color: #FFCC00;
+        -webkit-text-stroke: 0;
+    }
+    div .plant{
+        width: 210px;
+        height: 0;
+        margin: 0 auto;
+        border-radius: 10px;
+        border-top: 20px solid #CC9966;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        position: relative;
+        top: 15px;
+    }
+    div p:last-child{
+        width: 200px;
+        height: 150px;
+        margin: 0 auto;
+        background: #CC9966;
+        opacity: 0.75;
+        border-radius: 10px;
+    }
+    .snow{
+    position:fixed; /*Positions it so it stays when you scroll down*/
+    top:0; /*Makes it full screen*/
+    left:0;
+    right:0;
+    bottom:0;
+    pointer-events:none; /*Allows the user to click through it*/
+}
+</style>
+<script type="text/javascript">     
+    $(document).ready(function(){
+        $(document).snowfall({
+            minSize: 2,
+            maxSize:5,
+            round : true,
+            flakeCount:40, minSpeed:1,maxSpeed:5
+         })
+    });
+ </script>
+<div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 11.84px; height: 11.84px; position: absolute; top: 168px; left: 120.344px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 7.13px; height: 7.13px; position: absolute; top: 165px; left: 253.818px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 9.74px; height: 9.74px; position: absolute; top: 56px; left: 239.589px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 5.71px; height: 5.71px; position: absolute; top: 276px; left: 237.345px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 6.51px; height: 6.51px; position: absolute; top: 110px; left: 137.892px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 4.13px; height: 4.13px; position: absolute; top: 2px; left: 39.9565px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 5.05px; height: 5.05px; position: absolute; top: 72px; left: 321.258px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 7.7px; height: 7.7px; position: absolute; top: 324px; left: 252.002px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 10.85px; height: 10.85px; position: absolute; top: 109px; left: 55.1557px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 8.3px; height: 8.3px; position: absolute; top: 312px; left: 66.4558px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 4.71px; height: 4.71px; position: absolute; top: 120px; left: 49.0625px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 8.58px; height: 8.58px; position: absolute; top: 238px; left: 111.71px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 6.62px; height: 6.62px; position: absolute; top: 160px; left: 272.979px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 8.08px; height: 8.08px; position: absolute; top: 311px; left: 226.149px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 9.82px; height: 9.82px; position: absolute; top: 280px; left: 260.709px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 3.58px; height: 3.58px; position: absolute; top: 98px; left: 238.496px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 3.63px; height: 3.63px; position: absolute; top: 128px; left: 74.3612px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 8.46px; height: 8.46px; position: absolute; top: 78px; left: 60.6874px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 6.39px; height: 6.39px; position: absolute; top: 26px; left: 86.1142px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 6.06px; height: 6.06px; position: absolute; top: 105px; left: 152.225px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 12.25px; height: 12.25px; position: absolute; top: 240px; left: 261.147px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 7.57px; height: 7.57px; position: absolute; top: 198px; left: 67.5987px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 8.26px; height: 8.26px; position: absolute; top: 258px; left: 179.486px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 5.3px; height: 5.3px; position: absolute; top: 80px; left: 295.317px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 10.22px; height: 10.22px; position: absolute; top: 88px; left: 87.2878px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 6.8px; height: 6.8px; position: absolute; top: 6px; left: 314.142px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 5.8px; height: 5.8px; position: absolute; top: 44px; left: 88.4262px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 11.37px; height: 11.37px; position: absolute; top: 288px; left: 226.859px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 12.25px; height: 12.25px; position: absolute; top: 166px; left: 139.557px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 10.06px; height: 10.06px; position: absolute; top: 160px; left: 54.5077px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 11.48px; height: 11.48px; position: absolute; top: 164px; left: 212.889px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 4.37px; height: 4.37px; position: absolute; top: 176px; left: 131.429px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 12.41px; height: 12.41px; position: absolute; top: 284px; left: 203.519px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 11.91px; height: 11.91px; position: absolute; top: 89px; left: 94.0615px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 4.83px; height: 4.83px; position: absolute; top: 242px; left: 217.339px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 8.76px; height: 8.76px; position: absolute; top: 6px; left: 60.9976px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 6.07px; height: 6.07px; position: absolute; top: 172px; left: 95.0201px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 5.83px; height: 5.83px; position: absolute; top: 312px; left: 77.7881px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 7.21px; height: 7.21px; position: absolute; top: 154px; left: 227.503px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 11.6px; height: 11.6px; position: absolute; top: 282px; left: 232.266px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 8.28px; height: 8.28px; position: absolute; top: 41px; left: 253.648px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 5.04px; height: 5.04px; position: absolute; top: 191px; left: 213.769px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 12.03px; height: 12.03px; position: absolute; top: 312px; left: 55.6134px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 12.58px; height: 12.58px; position: absolute; top: 93px; left: 252.324px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 5.23px; height: 5.23px; position: absolute; top: 279px; left: 245.812px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 10.8px; height: 10.8px; position: absolute; top: 325px; left: 224.701px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 11.15px; height: 11.15px; position: absolute; top: 276px; left: 206.813px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 5.72px; height: 5.72px; position: absolute; top: 80px; left: 80.7886px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 9.38px; height: 9.38px; position: absolute; top: 324px; left: 214.788px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div><div class="snowfall-flakes" style="background: rgb(255, 255, 255); width: 7.71px; height: 7.71px; position: absolute; top: 106px; left: 56.0864px; font-size: 0px; z-index: 999999; border-radius: 13px;"></div></body></html>
