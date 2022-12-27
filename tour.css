@@ -1,5 +1,11 @@
 @charset "utf-8";
 @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+@font-face {
+    font-family: 'KOTRAHOPE';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 /* -------------------------------- */
 /* ---------- CSS RESET ---------- */
 /* ------------------------------ */
@@ -75,7 +81,30 @@ html, body{margin: 0;padding: 0;}
 
 /* 3rd Travel */
 #city_wrap{
-	background: antiquewhite;
+	background: #d7ebfa;
+	padding-bottom: 70px;
+}
+#city_wrap hr{
+	width: 90%;
+    border: 1px solid #318ccb;
+}
+#city_wrap header{
+	background: url(img/header_bg.png) no-repeat center top;
+	background-size: cover;
+	width: 100%;
+	height: 234px;
+	text-align: center;
+	position: relative;
+}
+
+#city_wrap header div{
+	height: 234px;
+	padding-top: 55px;
+	backdrop-filter: blur(1.5px);
+	box-sizing: border-box;
+}
+#city_wrap header div img{
+	width: 80%;
 }
 #city_wrap h1{
 	text-align: center;
@@ -85,20 +114,17 @@ html, body{margin: 0;padding: 0;}
 #city_wrap h2{
     text-align: center;
     padding: 20px 0;
-    font-size: 20px;
-    border: 1px solid;
+    font-size: 23px;
     border-radius: 10px;
-    background: #f5f5f5;
+    background: #a8d3f3;
     margin: 10px 0;
+	font-family: 'KOTRAHOPE';
 }
 #city_wrap h4{
-	text-align: center;
-    padding: 20px 0;
     font-size: 15px;
-    border: 1px solid;
     border-radius: 10px;
-    background: #f5f5f5;
-    margin: 10px 0;
+    margin: 20px 0 0;
+    font-family: 'GmarketSans';
 }
 #city_wrap .city{
 	padding: 0 20px;
@@ -122,20 +148,28 @@ html, body{margin: 0;padding: 0;}
 /* #city_wrap .city .plan .maplink span{line-height: 10px;} */
 #city_wrap .city .plan .addr{
 	font-size: 13px;
+	padding-left: 60px;
+}
+#city_wrap .cake .plan .addr{
+	padding-left: 0;
 }
 #city_wrap .city li{
 	font-size: 18px;
 }
+#city_wrap .city p,
+#city_wrap .city span{
+	font-family: 'GmarketSans';
+}
 
 /* 카카오맵 불러오기 */
 .maps1{
-	font:normal normal 400 12px/normal dotum, sans-serif; width:335px; height:225px; color:#333; position:relative; padding: 20px 0;
+	font:normal normal 400 12px/normal dotum, sans-serif; width:100%; height:225px; color:#333; position:relative; padding: 20px 0;
 }
 .maps2{
 	height: 200px;
 }
 .maps1 .maps2 img{
-	width: 335px;
+	width: 100%;
 	height: 232px;
 	border:1px solid #ccc;
 }
